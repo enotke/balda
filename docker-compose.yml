@@ -1,9 +1,10 @@
 version: "3"
 services:
   app:
-    image: node:16-slim
+    build:
+      context: "./"
     restart: "always"
     volumes:
       - "./:/app"
-    command: bash -c "npm install && yarn run serve"
+    command: bash -c "npm && npm run serve"
     working_dir: "/app"
