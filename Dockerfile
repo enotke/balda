@@ -1,4 +1,4 @@
 FROM node:16-slim
 
-RUN npm install --location=global npm@7.17.0
-RUN npm install --location=global nodemon
+RUN npm install npm@7.17.0 --location=global
+RUN npm install -g @vue/cli

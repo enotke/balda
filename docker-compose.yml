@@ -3,8 +3,11 @@ services:
   app:
     build:
       context: "./"
+    container_name: balda
+    ports:
+      - "8080:8080"
     restart: "always"
     volumes:
       - "./:/app"
-    command: bash -c "npm && npm run serve"
+    command: bash -c "npm install && npm run serve"
     working_dir: "/app"
