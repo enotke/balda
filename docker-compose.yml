@@ -1,0 +1,11 @@
+version: "3"
+services:
+  app:
+    image: node:14
+    restart: "always"
+    ports:
+      - "8081:8081"
+    volumes:
+      - "./:/app"
+    command: bash -c "yarn && yarn run serve"
+    working_dir: "/app"

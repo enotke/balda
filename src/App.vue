@@ -117,10 +117,6 @@ export default class App extends Vue {
         this.wordIds.push(id);
     }
 
-    nextStep(): void {
-
-    }
-
     updateWordList(word: Word, id: number): void {
         if (!this.isStarted) {
             return;
