@@ -1,10 +1,10 @@
 import { Player } from '@/common';
-import { getCookie, setCookie } from 'typescript-cookie';
+import Cookie from './Cookie';
 
 const cookieName = 'players';
 export default class PlayerStore {
     static getPlayers(): Array<Player> {
-        return JSON.parse(getCookie(cookieName) || '') || [];
+        return Cookie.getCookie<Player>(cookieName);
     }
 
     static addPlayer(player: Player): void {
@@ -13,6 +13,6 @@ export default class PlayerStore {
             return;
         }
         players.push(player);
-        setCookie(cookieName, JSON.stringify(players));
+        Cookie.setCookie<Array<Player>>(cookieName, players);
     }
 }
