@@ -1,10 +1,9 @@
 version: "3"
 services:
   app:
-    image: node:16-slim
+    build:
+      context: "./"
     restart: "always"
-    ports:
-      - "8081:8081"
     volumes:
       - "./:/app"
     command: bash -c "yarn && yarn run serve"
